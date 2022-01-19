@@ -2,7 +2,7 @@ name: CI to GHCR
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
 
@@ -40,9 +40,9 @@ jobs:
           file: ./Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: ghcr.io/usha-mandya/simplewhale:latest
+          tags: ghcr.io/ShiunduBruce/simplewhale:latest
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
-          
+
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
