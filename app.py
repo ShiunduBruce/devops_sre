@@ -1,15 +1,15 @@
 import os
 
 # os.environ["GIT_PYTHON_REFRESH"] = "quiet"
-import git
+# import git
 from flask import Flask
 
 app = Flask(__name__)
 
 @app.route("/")
 def index():
-    repo = git.Repo("./")
-    return 'My last commit: ' + str(repo.head.commit)
+    # repo = git.Repo("./")
+    return 'My last commit: ' # + str(repo.head.commit)
 
 
 if __name__ == "__main__":
